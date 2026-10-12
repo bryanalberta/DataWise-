@@ -1,0 +1,625 @@
+{
+  "metadata": {
+    "generatedAt": "2026-10-11T20:38:00Z",
+    "pythonVersion": "3.13.2",
+    "numpyVersion": "2.3.1",
+    "pandasVersion": "2.3.0",
+    "methodology": "NumPy percentile method='linear' (Type-7), ddof=1 sample variance/std, deterministic multimodal ties",
+    "tolerancePolicy": {
+      "atol": 1e-05,
+      "rtol": 1e-05,
+      "discrete": "exact"
+    }
+  },
+  "mathematical_fixtures": {
+    "fixture_1_sequential_5": {
+      "description": "Angka berurutan 1 sampai 5",
+      "raw_data": [
+        1.0,
+        2.0,
+        3.0,
+        4.0,
+        5.0
+      ],
+      "numericStats": {
+        "count": 5,
+        "missing": 0,
+        "sum": 15.0,
+        "mean": 3.0,
+        "median": 3.0,
+        "mode": null,
+        "variance": 2.5,
+        "standardDeviation": 1.5811388300841898,
+        "min": 1.0,
+        "max": 5.0,
+        "q1": 2.0,
+        "q3": 4.0,
+        "iqr": 2.0
+      }
+    },
+    "fixture_2_even_4": {
+      "description": "Angka berjumlah genap 1 sampai 4",
+      "raw_data": [
+        1.0,
+        2.0,
+        3.0,
+        4.0
+      ],
+      "numericStats": {
+        "count": 4,
+        "missing": 0,
+        "sum": 10.0,
+        "mean": 2.5,
+        "median": 2.5,
+        "mode": null,
+        "variance": 1.6666666666666667,
+        "standardDeviation": 1.2909944487358056,
+        "min": 1.0,
+        "max": 4.0,
+        "q1": 1.75,
+        "q3": 3.25,
+        "iqr": 1.5
+      }
+    },
+    "fixture_3_neg_zero_dec": {
+      "description": "Nilai negatif, nol, dan desimal simetris",
+      "raw_data": [
+        -10.5,
+        -5.25,
+        0.0,
+        5.25,
+        10.5
+      ],
+      "numericStats": {
+        "count": 5,
+        "missing": 0,
+        "sum": 0.0,
+        "mean": 0.0,
+        "median": 0.0,
+        "mode": null,
+        "variance": 68.90625,
+        "standardDeviation": 8.300978857941995,
+        "min": -10.5,
+        "max": 10.5,
+        "q1": -5.25,
+        "q3": 5.25,
+        "iqr": 10.5
+      }
+    },
+    "fixture_4_constant": {
+      "description": "Konstanta 6 observasi bernilai 42.0 (varians 0)",
+      "raw_data": [
+        42.0,
+        42.0,
+        42.0,
+        42.0,
+        42.0,
+        42.0
+      ],
+      "numericStats": {
+        "count": 6,
+        "missing": 0,
+        "sum": 252.0,
+        "mean": 42.0,
+        "median": 42.0,
+        "mode": [
+          42.0
+        ],
+        "variance": 0.0,
+        "standardDeviation": 0.0,
+        "min": 42.0,
+        "max": 42.0,
+        "q1": 42.0,
+        "q3": 42.0,
+        "iqr": 0.0
+      }
+    },
+    "fixture_5_single_sample": {
+      "description": "Sampel tunggal N = 1 bernilai 99.9",
+      "raw_data": [
+        99.9
+      ],
+      "numericStats": {
+        "count": 1,
+        "missing": 0,
+        "sum": 99.9,
+        "mean": 99.9,
+        "median": 99.9,
+        "mode": [
+          99.9
+        ],
+        "variance": null,
+        "standardDeviation": null,
+        "min": 99.9,
+        "max": 99.9,
+        "q1": 99.9,
+        "q3": 99.9,
+        "iqr": 0.0
+      }
+    },
+    "fixture_6_missing_values": {
+      "description": "Data dengan missing values (3 valid, 2 missing)",
+      "raw_data": [
+        10.0,
+        20.0,
+        30.0
+      ],
+      "numericStats": {
+        "count": 3,
+        "missing": 2,
+        "sum": 60.0,
+        "mean": 20.0,
+        "median": 20.0,
+        "mode": null,
+        "variance": 100.0,
+        "standardDeviation": 10.0,
+        "min": 10.0,
+        "max": 30.0,
+        "q1": 15.0,
+        "q3": 25.0,
+        "iqr": 10.0
+      }
+    },
+    "fixture_7_multimodal_ties": {
+      "description": "Distribusi bimodal dengan seri [1.0, 2.0]",
+      "raw_data": [
+        1.0,
+        1.0,
+        2.0,
+        2.0,
+        3.0
+      ],
+      "numericStats": {
+        "count": 5,
+        "missing": 0,
+        "sum": 9.0,
+        "mean": 1.8,
+        "median": 2.0,
+        "mode": [
+          1.0,
+          2.0
+        ],
+        "variance": 0.7000000000000001,
+        "standardDeviation": 0.8366600265340756,
+        "min": 1.0,
+        "max": 3.0,
+        "q1": 1.0,
+        "q3": 2.0,
+        "iqr": 1.0
+      }
+    },
+    "fixture_8_all_unique": {
+      "description": "Seluruh angka bernilai unik saat N > 1 (tidak ada modus)",
+      "raw_data": [
+        10.0,
+        20.0,
+        30.0,
+        40.0
+      ],
+      "numericStats": {
+        "count": 4,
+        "missing": 0,
+        "sum": 100.0,
+        "mean": 25.0,
+        "median": 25.0,
+        "mode": null,
+        "variance": 166.66666666666666,
+        "standardDeviation": 12.909944487358056,
+        "min": 10.0,
+        "max": 40.0,
+        "q1": 17.5,
+        "q3": 32.5,
+        "iqr": 15.0
+      }
+    },
+    "fixture_9_all_missing": {
+      "description": "Seluruh observasi missing (N = 0 valid)",
+      "raw_data": [],
+      "numericStats": {
+        "count": 0,
+        "missing": 3,
+        "sum": null,
+        "mean": null,
+        "median": null,
+        "mode": null,
+        "variance": null,
+        "standardDeviation": null,
+        "min": null,
+        "max": null,
+        "q1": null,
+        "q3": null,
+        "iqr": null
+      }
+    },
+    "fixture_10_small_magnitude": {
+      "description": "Magnitudo kecil presisi tinggi (1e-6 s/d 5e-6)",
+      "raw_data": [
+        1e-06,
+        2e-06,
+        3e-06,
+        4e-06,
+        5e-06
+      ],
+      "numericStats": {
+        "count": 5,
+        "missing": 0,
+        "sum": 1.4999999999999999e-05,
+        "mean": 2.9999999999999997e-06,
+        "median": 3e-06,
+        "mode": null,
+        "variance": 2.5000000000000003e-12,
+        "standardDeviation": 1.5811388300841898e-06,
+        "min": 1e-06,
+        "max": 5e-06,
+        "q1": 2e-06,
+        "q3": 4e-06,
+        "iqr": 2e-06
+      }
+    },
+    "fixture_categorical_depts": {
+      "description": "Kategori departemen dengan tie-breaker frekuensi",
+      "raw_data": [
+        "Teknologi",
+        "Pemasaran",
+        "Teknologi",
+        "Keuangan",
+        "Pemasaran",
+        "Teknologi"
+      ],
+      "categoricalStats": {
+        "count": 6,
+        "missing": 1,
+        "uniqueCount": 3,
+        "topValue": "Teknologi",
+        "topValueFrequency": 3,
+        "frequencies": [
+          {
+            "value": "Teknologi",
+            "count": 3,
+            "percentage": 50.0
+          },
+          {
+            "value": "Pemasaran",
+            "count": 2,
+            "percentage": 33.33333333333333
+          },
+          {
+            "value": "Keuangan",
+            "count": 1,
+            "percentage": 16.666666666666664
+          }
+        ]
+      }
+    }
+  },
+  "iris": {
+    "dataset": "iris",
+    "totalRecords": 150,
+    "sourceUrl": "https://raw.githubusercontent.com/mwaskom/seaborn-data/master/iris.csv",
+    "provenance": "Ronald A. Fisher (1936) / UCI / Seaborn canonical repository",
+    "columns": {
+      "sepal_length": {
+        "type": "Numeric",
+        "numericStats": {
+          "count": 150,
+          "missing": 0,
+          "sum": 876.5,
+          "mean": 5.843333333333334,
+          "median": 5.8,
+          "mode": [
+            5.0
+          ],
+          "variance": 0.6856935123042507,
+          "standardDeviation": 0.828066127977863,
+          "min": 4.3,
+          "max": 7.9,
+          "q1": 5.1,
+          "q3": 6.4,
+          "iqr": 1.3000000000000007
+        }
+      },
+      "sepal_width": {
+        "type": "Numeric",
+        "numericStats": {
+          "count": 150,
+          "missing": 0,
+          "sum": 458.6,
+          "mean": 3.0573333333333337,
+          "median": 3.0,
+          "mode": [
+            3.0
+          ],
+          "variance": 0.189979418344519,
+          "standardDeviation": 0.4358662849366982,
+          "min": 2.0,
+          "max": 4.4,
+          "q1": 2.8,
+          "q3": 3.3,
+          "iqr": 0.5
+        }
+      },
+      "petal_length": {
+        "type": "Numeric",
+        "numericStats": {
+          "count": 150,
+          "missing": 0,
+          "sum": 563.7,
+          "mean": 3.7580000000000005,
+          "median": 4.35,
+          "mode": [
+            1.4,
+            1.5
+          ],
+          "variance": 3.116277852348993,
+          "standardDeviation": 1.7652982332594662,
+          "min": 1.0,
+          "max": 6.9,
+          "q1": 1.6,
+          "q3": 5.1,
+          "iqr": 3.4999999999999996
+        }
+      },
+      "petal_width": {
+        "type": "Numeric",
+        "numericStats": {
+          "count": 150,
+          "missing": 0,
+          "sum": 179.90000000000003,
+          "mean": 1.1993333333333336,
+          "median": 1.3,
+          "mode": [
+            0.2
+          ],
+          "variance": 0.5810062639821029,
+          "standardDeviation": 0.7622376689603465,
+          "min": 0.1,
+          "max": 2.5,
+          "q1": 0.3,
+          "q3": 1.8,
+          "iqr": 1.5
+        }
+      },
+      "species": {
+        "type": "Categorical",
+        "categoricalStats": {
+          "count": 150,
+          "missing": 0,
+          "uniqueCount": 3,
+          "topValue": "setosa",
+          "topValueFrequency": 50,
+          "frequencies": [
+            {
+              "value": "setosa",
+              "count": 50,
+              "percentage": 33.33333333333333
+            },
+            {
+              "value": "versicolor",
+              "count": 50,
+              "percentage": 33.33333333333333
+            },
+            {
+              "value": "virginica",
+              "count": 50,
+              "percentage": 33.33333333333333
+            }
+          ]
+        }
+      }
+    }
+  },
+  "titanic": {
+    "dataset": "titanic",
+    "totalRecords": 891,
+    "sourceUrl": "https://raw.githubusercontent.com/datasciencedojo/datasets/master/titanic.csv",
+    "provenance": "British Board of Trade enquiry / Kaggle / Data Science Dojo archive",
+    "columns": {
+      "Age": {
+        "type": "Numeric",
+        "numericStats": {
+          "count": 714,
+          "missing": 177,
+          "sum": 21205.17,
+          "mean": 29.69911764705882,
+          "median": 28.0,
+          "mode": [
+            24.0
+          ],
+          "variance": 211.01912474630805,
+          "standardDeviation": 14.526497332334042,
+          "min": 0.42,
+          "max": 80.0,
+          "q1": 20.125,
+          "q3": 38.0,
+          "iqr": 17.875
+        }
+      },
+      "Fare": {
+        "type": "Numeric",
+        "numericStats": {
+          "count": 891,
+          "missing": 0,
+          "sum": 28693.9493,
+          "mean": 32.204207968574636,
+          "median": 14.4542,
+          "mode": [
+            8.05
+          ],
+          "variance": 2469.436845743116,
+          "standardDeviation": 49.6934285971809,
+          "min": 0.0,
+          "max": 512.3292,
+          "q1": 7.9104,
+          "q3": 31.0,
+          "iqr": 23.0896
+        }
+      },
+      "SibSp": {
+        "type": "Numeric",
+        "numericStats": {
+          "count": 891,
+          "missing": 0,
+          "sum": 466.0,
+          "mean": 0.5230078563411896,
+          "median": 0.0,
+          "mode": [
+            0.0
+          ],
+          "variance": 1.2160430774662985,
+          "standardDeviation": 1.1027434322934317,
+          "min": 0.0,
+          "max": 8.0,
+          "q1": 0.0,
+          "q3": 1.0,
+          "iqr": 1.0
+        }
+      },
+      "Parch": {
+        "type": "Numeric",
+        "numericStats": {
+          "count": 891,
+          "missing": 0,
+          "sum": 340.0,
+          "mean": 0.38159371492704824,
+          "median": 0.0,
+          "mode": [
+            0.0
+          ],
+          "variance": 0.6497282437357343,
+          "standardDeviation": 0.8060572211299483,
+          "min": 0.0,
+          "max": 6.0,
+          "q1": 0.0,
+          "q3": 0.0,
+          "iqr": 0.0
+        }
+      },
+      "Sex": {
+        "type": "Categorical",
+        "categoricalStats": {
+          "count": 891,
+          "missing": 0,
+          "uniqueCount": 2,
+          "topValue": "male",
+          "topValueFrequency": 577,
+          "frequencies": [
+            {
+              "value": "male",
+              "count": 577,
+              "percentage": 64.75869809203144
+            },
+            {
+              "value": "female",
+              "count": 314,
+              "percentage": 35.24130190796858
+            }
+          ]
+        }
+      },
+      "Embarked": {
+        "type": "Categorical",
+        "categoricalStats": {
+          "count": 889,
+          "missing": 2,
+          "uniqueCount": 3,
+          "topValue": "S",
+          "topValueFrequency": 644,
+          "frequencies": [
+            {
+              "value": "S",
+              "count": 644,
+              "percentage": 72.44094488188976
+            },
+            {
+              "value": "C",
+              "count": 168,
+              "percentage": 18.89763779527559
+            },
+            {
+              "value": "Q",
+              "count": 77,
+              "percentage": 8.661417322834646
+            }
+          ]
+        }
+      },
+      "Pclass": {
+        "type": "Categorical",
+        "categoricalStats": {
+          "count": 891,
+          "missing": 0,
+          "uniqueCount": 3,
+          "topValue": "3",
+          "topValueFrequency": 491,
+          "frequencies": [
+            {
+              "value": "3",
+              "count": 491,
+              "percentage": 55.106621773288445
+            },
+            {
+              "value": "1",
+              "count": 216,
+              "percentage": 24.242424242424242
+            },
+            {
+              "value": "2",
+              "count": 184,
+              "percentage": 20.65095398428732
+            }
+          ]
+        }
+      },
+      "Survived": {
+        "type": "Categorical",
+        "categoricalStats": {
+          "count": 891,
+          "missing": 0,
+          "uniqueCount": 2,
+          "topValue": "0",
+          "topValueFrequency": 549,
+          "frequencies": [
+            {
+              "value": "0",
+              "count": 549,
+              "percentage": 61.61616161616161
+            },
+            {
+              "value": "1",
+              "count": 342,
+              "percentage": 38.38383838383838
+            }
+          ]
+        }
+      },
+      "PassengerId": {
+        "type": "Text",
+        "isIdentifier": true,
+        "totalCount": 891,
+        "missingCount": 0,
+        "validCount": 891
+      },
+      "Name": {
+        "type": "Text",
+        "isIdentifier": true,
+        "totalCount": 891,
+        "missingCount": 0,
+        "validCount": 891
+      },
+      "Ticket": {
+        "type": "Text",
+        "isIdentifier": true,
+        "totalCount": 891,
+        "missingCount": 0,
+        "validCount": 891
+      },
+      "Cabin": {
+        "type": "Text",
+        "isIdentifier": true,
+        "totalCount": 891,
+        "missingCount": 687,
+        "validCount": 204
+      }
+    }
+  }
+}
